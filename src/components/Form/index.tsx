@@ -27,9 +27,11 @@ export const Form = () => {
     const sendToEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         emailjs.sendForm('service_ozo4pup', 'template_v4xnbmc', e.currentTarget, '8PHv4YxKhdfQNkxdh')
-            .then(res => console.log(res))
+            .then(res => {
+                console.log(res)
+                cleanForm()
+            })
             .catch(err => console.log(err))
-        cleanForm()
 }
 
     return (
